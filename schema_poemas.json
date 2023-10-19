@@ -1,0 +1,29 @@
+{
+    "$schema": "http://json-schema.org/draft-04/schema#", 
+    "type": "object",
+    "properties": {
+      "romantico": {
+        "type": "boolean"
+      },
+      "numero_max_palabras": {
+        "type": "integer",
+        "minimum": 30,
+        "maximum": 140
+      },
+      "lenguajes_de_programacion": {
+        "type": "string",
+        "enum": [
+          "JavaScript",
+          "Python",
+          "Java",
+          "C#",
+          "C++",
+          "Ruby",
+          "CSS",
+          "TypeScript",
+          "PHP",
+          "Swift"      ]
+      }
+    },
+    "required": ["romantico", "numero_max_palabras", "lenguajes_de_programacion"]
+  }

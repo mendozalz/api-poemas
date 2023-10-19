@@ -1,0 +1,20 @@
+service: poemas-geek
+
+provider:
+  name: aws
+  runtime: nodejs14.x
+  stage: dev
+  region: us-east-1
+  environment:
+    OPENAIKEY: ${ssm:/openaikey}
+
+functions:
+  generarPoemas:
+    handler: handler.generarPoemas
+    events:
+      - http:
+          path: generar-poemas
+          method: post
+          request:
+            schema:
+              application/json: ${file(schema_poemas.json)}
